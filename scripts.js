@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     Walker.prototype.display = function () {
-        ctx.beginPath();
-        console.log(this.x, this.y)
-        ctx.moveTo(this.x, this.y)
+
         ctx.lineTo(this.x + 5, this.y + 5)
         ctx.stroke();
         console.log(this.x++, this.y++, " this plus plus")
@@ -36,12 +34,18 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const w = new Walker();
-
+    walkerPositionInit = function () {
+        ctx.beginPath();
+        console.log(this.x, this.y)
+        ctx.moveTo(this.x, this.y)
+        //setInterval(draw, 300)
+    }
     draw = function () {
         w.walk();
         w.display();
     };
-    draw()
+    walkerPositionInit()
+
 })
 
 
