@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const width = canvas.width;
     const height = canvas.height;
 
-    const Walker = function () {
-        this.x = width / 2;
-        this.y = height / 2;
+    class Walker {
+        constructor(width, height) {
+            this.x = width / 2;
+            this.y = height / 2;
+        }
     };
 
     Walker.prototype.init = function () {
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         w.display();
     };
 
-    const w = new Walker();
+    const w = new Walker(width, height);
     w.init()
 })
 
